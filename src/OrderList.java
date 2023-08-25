@@ -15,14 +15,46 @@ public class OrderList {
                 addOrder(order);
             }
     }
+    public void removeOrder(int ID) {
+        for (int i = 0; i < orders.length; i++) {
+            if(orders[i] == null) continue;
+            if(orders[i].getID() == ID) {
+                orders[i] = null;
+                sortOrders();
+            }
+        }
+    }
+    public String printOrder(int ID) {
+        for (int i = 0; i < orders.length; i++) {
+            if(orders[i] == null) continue;
+            if(orders[i].getID() == ID) {
+                return orders[i].toString();
+            }
+        }
+        return "";
+    }
+    public String printOrders() {
+        sortOrders();
+        StringBuilder ready = new StringBuilder("Ready\n");
+        StringBuilder preparing = new StringBuilder("Preparing\n");
+        for (int i = 0; i < orders.length; i++) {
+            if(orders[i] == null) continue;
+            if(orders[i].ready == true) {
+                ready.append(orders[i].getID() + "\n");
+            }
+            else preparing.append(orders[i].getID() + "\n");
+        }
+        return ready.toString() + preparing.toString();
+    }
     public void readyOrder(int ID) {
         for (int i = 0; i < orders.length; i++) {
+            if(orders[i] == null) continue;
             if (orders[i].getID() == ID) {
                 orders[i].ready = true;
             }
         }
     }
-    private void SortOrders() {
+    private void sortOrders() {
         shiftNullsToEnd();
         insertionSortUntilNullReached();
     }
