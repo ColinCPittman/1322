@@ -19,9 +19,10 @@ public class Order {
         return orderID;
     }
     public String toString() {
-        StringBuilder sb = new StringBuilder("Order number: " + orderID + "\n" + ready + "\n");
-        for(String items : this.items) sb.append(items).append("\n");
-        String output = sb.toString();
-        return output;
+        StringBuilder orderDetails = new StringBuilder("Order number: " + orderID + "\n");
+        if(ready) orderDetails.append("Ready" + "\n");
+        else orderDetails.append("Not Ready" + "\n");
+        for(String items : this.items) orderDetails.append(items).append("\n");
+        return orderDetails.toString();
     }
 }
