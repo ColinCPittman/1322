@@ -21,6 +21,11 @@ public class Order {
     public int getID() {
         return orderID;
     }
+
+    /**
+     * Used for printing the full information of the order.
+     * @return orderID #, ready status, and each item in order.
+     */
     @Override
     public String toString() {
         StringBuilder orderDetails = new StringBuilder("Order number: " + orderID + "\n");
