@@ -9,10 +9,10 @@ public class Driver {
             mainMenuChoice = getMenuChoice(fromOne, toFive, exitValue, "Choice: ");
             switch (mainMenuChoice) {
                 case new_order -> {
-                    String[] newItems = new String[3];
-                    getItemsInput(newItems);
-                    Order ord = new Order(newItems);
-                    restaurantOrders.addOrder(ord);
+                    String[] orderItems = new String[3];
+                    getItemsInput(orderItems);
+                    Order newOrder = new Order(orderItems);
+                    restaurantOrders.addOrder(newOrder);
                     System.out.println("New order has been added.");
                 }
                 case remove_order -> {
