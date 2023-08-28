@@ -119,7 +119,7 @@ public class OrderList {
 
 
     /**
-     * Doubles the size of the array orders by creating a new array of size that is twice the length of array orders, allows the orders array to expand whenever
+     * Doubles the size of the array orders and preserves objects in array, allows the orders array to expand whenever
      * it fills with orders.
      */
     private void doubleSizeOfOrderArray() { //doubles the size of the provided Order array
