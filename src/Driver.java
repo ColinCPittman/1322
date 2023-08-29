@@ -61,9 +61,9 @@ public class Driver {
      * Intended for use with simple numbered menus in coding assignments with an option to exit.
      * Prompts the user until a valid input is given.
      *
-     * @param lowValue     Lowest acceptable menu option.
-     * @param highValue    Highest acceptable menu option.
-     * @param exitValue    Option to exit the menu.
+     * @param lowValue     Lowest numbered menu option.
+     * @param highValue    Highest numbered menu option.
+     * @param exitValue    Number option to exit the menu.
      * @param choicePrompt Prompt to display for user input.
      * @return Selected menu option or exit value.
      */
